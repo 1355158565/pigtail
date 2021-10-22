@@ -1,0 +1,18 @@
+<!--pages/selectmode/selectmode.wxml-->
+<view class='container'>
+  <view class="infomation">
+    <view class="cu-avatar sm round margin-left" style="background-image:url({{userInfo.avatarUrl}});"></view>
+    <view class="name">{{userInfo.nickName}}</view>
+  </view>
+  <image class='title' src="https://img2020.cnblogs.com/blog/1925175/202110/1925175-20211019185141675-932010204.png"></image>
+  <image class='hello' src="  https://img2020.cnblogs.com/blog/1925175/202110/1925175-20211019193743388-590974282.gif"></image>
+  <view class="mode">
+      <button class="cu-btn round sm bg-yellow" style="color:#ffffff" bindtap='localgame'>双人对战</button>
+      <button class="cu-btn round sm bg-yellow" style="color:#ffffff" bindtap='aigame'> 人机对战</button>
+      <button class="cu-btn round sm bg-yellow" style="color:#ffffff" bindtap='onlinegame'>在线对战</button>
+  </view>
+  <view class="setting">
+    <view class="{{musictap==1?'cuIcon-musicfill':'cuIcon-musicforbidfill'}}" bindtap="turn_music"></view>
+    <view class="cuIcon-settingsfill" bindtap="showModal"></view>
+  </view>
+</view>
