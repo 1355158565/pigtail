@@ -1,0 +1,66 @@
+<!--pages/localgame/localgame.wxml-->
+<view class="container">
+  <view class="p1pile">
+    <view class="p1club">
+      <image class="" src="{{p1_club_top}}" mode="aspectFit" bindtap="Play_card" data-flowercolor="C" data-player="p1"/>
+      <view class="pilenum">梅花x{{p1_club}}</view>
+    </view>
+    <view class="p1diamond">
+      <image class="" src="{{p1_diamond_top}}" mode="aspectFit" bindtap="Play_card" data-flowercolor="D" data-player="p1"/>
+      <view class="pilenum">方块x{{p1_diamond}}</view>
+    </view>
+    <view class="p1spade">
+      <image class="p1spade" src="{{p1_spade_top}}" mode="aspectFit" bindtap="Play_card" data-flowercolor="S" data-player="p1"/>
+      <view class="pilenum">黑桃x{{p1_spade}}</view>
+    </view>
+    <view class="p1heart">
+      <image class="p1heart" src="{{p1_heart_top}}" mode="aspectFit" bindtap="Play_card" data-flowercolor="H" data-player="p1"/>
+      <view class="pilenum">红桃x{{p1_heart}}</view>
+    </view>
+  </view>
+  <view class="user">
+    <view class="cu-avatar sm round margin-left" style="background-image:url({{userInfo.avatarUrl}});"></view>
+    <view class="username">{{userInfo.nickName}}</view>
+  </view>
+  <view class="p1total">
+    <view class="">Total：{{p1_total}}张</view>
+  </view>
+  <view class="mopai">
+    <view class="mopaiqu">摸牌区</view>
+    <image src="{{pile_top}}" mode="aspectFit" bindtap="Turnon_card"/>
+    <view class="mopainum">Total:{{pile_total}}</view>
+  </view>
+  <view class="fangzhi">
+    <view class="fangzhiqu">放置区</view>
+    <image src="{{decision_top}}" mode="aspectFit"/>
+    <view class="fangzhinum">Total:{{decision_total}}</view>
+  </view>
+  <view class="p2user">
+    <view class="cu-avatar sm round margin-left" style="background-image:url(https://tse1-mm.cn.bing.net/th/id/OIP-C.y59j45Qi-LJ2LdWAZ10IfAHaNK?w=187&h=333&c=8&rs=1&qlt=90&o=6&dpr=1.12&pid=3.1&rm=2&dpr=1.12);"></view>
+    <view class="p2name">小猪乔治</view>
+  </view>
+  <view class="turn">
+    <view class="">现在是{{flag=='p1'?'下方玩家':'上方玩家'}}的操作时间！</view>
+  </view>
+  <view class="p2pile">
+    <view class="p2club">
+      <image class="" src="{{p2_club_top}}" mode="aspectFit" bindtap="Play_card" data-flowercolor="C" data-player="p2"/>
+      <view class="pilenum">梅花x{{p2_club}}</view>
+    </view>
+    <view class="p2diamond">
+      <image class="" src="{{p2_diamond_top}}" mode="aspectFit" bindtap="Play_card" data-flowercolor="D" data-player="p2"/>
+      <view class="pilenum">方块x{{p2_diamond}}</view>
+    </view>
+    <view class="p2spade">
+      <image class="p2spade" src="{{p2_spade_top}}" mode="aspectFit" bindtap="Play_card" data-flowercolor="S" data-player="p2"/>
+      <view class="pilenum">黑桃x{{p2_spade}}</view>
+    </view>
+    <view class="p2heart">
+      <image class="p2heart" src="{{p2_heart_top}}" mode="aspectFit" bindtap="Play_card" data-flowercolor="H" data-player="p2"/>
+      <view class="pilenum">红桃x{{p2_heart}}</view>
+    </view>
+  </view>
+  <view class="p2total">
+    <view class="">Total：{{p2_total}}张</view>
+  </view>
+</view>
