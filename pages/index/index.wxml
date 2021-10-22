@@ -1,0 +1,4 @@
+<!--pages/index/index.wxml-->
+<view class='container'>
+  <button class="cu-btn start round bg-grey lg " bindtap="getUserProfile" hover-class="btn-hover">点击进入游戏</button>
+</view>
