@@ -1,0 +1,19 @@
+/* pages/index/index.wxss */
+.container{
+	width: 100vw;
+	height: 100vh;
+	background: url('https://up.enterdesk.com/edpic/79/9f/43/799f4382d60979be56f35850b236401a.jpeg');
+	background-size: contain;
+	padding: 0;
+}
+.start{
+  top: 1050rpx;
+  left: 180rpx;
+  width:400rpx;
+  height: 100rpx;
+}
+.btn-hover{
+  position: relative;
+  top: 1050rpx;
+  box-shadow:0px 0px 8px #FFF0F5 inset; 
+}
