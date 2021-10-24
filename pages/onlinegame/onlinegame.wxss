@@ -1,0 +1,134 @@
+/* pages/onlinegame/onlinegame.wxss */
+.container{
+  width: 100vw;
+	height: 100vh;
+	background: url('https://img2020.cnblogs.com/blog/1925175/202110/1925175-20211020132826162-590121617.png');
+	background-size: auto;
+	padding: 0;
+}
+.p1pile{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  width: 200rpx;
+  height: 250rpx;
+  justify-content:space-around;
+  margin-left: 30rpx;
+}
+.p2pile{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  width: 200rpx;
+  height: 250rpx;
+  justify-content:space-around;
+  margin-left: 550rpx;
+  margin-top: -6rpx;
+}
+.pilenum{
+  font-size: 15rpx;
+  font-family:'Times New Roman', Times, serif;
+  margin-left: 15rpx;
+  margin-top: -15rpx;
+  font-weight: 1000;
+}
+.p1total{
+  width: 80rpx;
+  height: 40rpx;
+  font-size: 15rpx;
+  font-weight: 1000;
+  font-family: 'Times New Roman', Times, serif;
+  margin-left:230rpx;
+  margin-top: -290rpx;
+}
+.p2total{
+  width: 80rpx;
+  height: 40rpx;
+  font-size: 15rpx;
+  font-weight: 1000;
+  font-family: 'Times New Roman', Times, serif;
+  margin-left:480rpx;
+  margin-top: -20rpx;
+}
+.user{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  font-size: 15rpx;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 1000;
+  margin-top: 10rpx;
+  width: 150rpx;
+  height: 50rpx;
+}
+.username{
+  margin-top: 20rpx;
+}
+.mopai{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 265rpx;
+  margin-top: 70rpx;
+  width: 90rpx;
+  height: 160rpx;
+}
+.mopaiqu{
+  margin-left: 15rpx;
+  font-size: 20rpx;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 1000;
+}
+.mopainum{
+  font-size: 25rpx;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 1000;
+}
+.fangzhi{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 425rpx;
+  margin-top: -160rpx;
+  width: 90rpx;
+  height: 160rpx;
+}
+.fangzhiqu{
+  margin-left: 15rpx;
+  font-size: 20rpx;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 1000;
+}
+.fangzhinum{
+  font-size: 25rpx;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 1000;
+}
+.p2user{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 15rpx;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 1000;
+  width: 150rpx;
+  height: 50rpx;
+  margin-left: 600rpx;
+  margin-top: -280rpx;
+}
+.p2name{
+  margin-top: 15rpx;
+}
+.setting{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80rpx;
+  height: 33rpx;
+  margin-left: 150rpx;
+  margin-top: -40rpx;
+}
+image{
+  width: 80rpx;
+  height: 120rpx;
+}
