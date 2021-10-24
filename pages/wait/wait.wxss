@@ -1,0 +1,20 @@
+/* pages/wait/wait.wxss */
+.container{
+  background: url('https://tse4-mm.cn.bing.net/th/id/OIP-C.AK1Nu19SsjqXIsY3koZmlgHaNK?w=187&h=333&c=8&rs=1&qlt=90&dpr=1.12&pid=3.1&rm=2&dpr=1.12');
+  background-size: contain;
+  width: 100vw;
+  height: 100vh;
+}
+.wait{
+  background-color: #ffffff;
+  font-size: 40rpx;
+  width: 750rpx;
+  height: 60rpx;
+  margin-left: 0rpx;
+  font-family:'Times New Roman', Times, serif;
+}
+.waitimg{
+  width: 700rpx;
+  height: 300rpx;
+  margin-top: 200rpx;
+}
