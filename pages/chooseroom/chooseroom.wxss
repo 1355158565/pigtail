@@ -1,0 +1,46 @@
+/* pages/chooseroom/chooseroom.wxss */
+.container{
+  background:url('https://img2020.cnblogs.com/blog/1925175/202110/1925175-20211022210655326-1933097025.jpg');
+  width: 100vw;
+  height: 100vh;
+  background-size: contain;
+  padding:0;
+}
+.choose{
+  display: flex;
+  flex-direction: column;
+  width: 100rpx;
+  height: 500rpx;
+  justify-content: space-around;
+  margin-left: 200rpx;
+  margin-top: 0rpx;
+}
+.join{ 
+  /* background-color: #fff;  */
+  line-height: 70rpx; 
+  width: 400rpx;
+  margin-top: -50rpx;
+  margin-left: 180rpx;
+  border-radius:20rpx;
+  border:1px solid #999999;
+  background-color: aliceblue;
+ } 
+  
+ .loginLab { 
+  margin: 15rpx 15rpx 15rpx 10rpx; 
+  color: #545454; 
+  font-size: 30rpx
+ } 
+  
+ .inputText { 
+  flex: block; 
+  float: right; 
+  text-align: right; 
+  margin-right: 22rpx; 
+  margin-top: 11rpx;
+  color: #FF6347; 
+  font-size: 25rpx
+ } 
+ .line { 
+  margin-top: 20rpx; 
+ } 
