@@ -1,0 +1,27 @@
+<!--pages/index/index.wxml-->
+<view class='container'>
+  <view class="login-icon"> 
+    <image class="login-img" src="https://tse1-mm.cn.bing.net/th/id/R-C.f913eb10fd39fc7a23bfff73714b4a2f?rik=NxHVkhQJxKnDBw&riu=http%3a%2f%2fup.deskcity.org%2fpic%2ff2%2ffd%2f6f%2ff2fd6f63bdf70bba056c361462b76a4e.jpg&ehk=D1VpDvhC0An7dQtQZOtE41VFQE9Mslt3omq1SAI3LGA%3d&risl=&pid=ImgRaw&r=0"></image> 
+  </view> 
+  <view class="login-from">
+ <!--学号-->
+  <view class="inputView"> 
+    <image class="nameImage" src="https://img-blog.csdnimg.cn/20190505172908345.png"></image> 
+    <label class="loginLab">学号</label> 
+    <input class="inputText" placeholder="请输入学号" bindinput="usernameInput" /> 
+  </view> 
+  <view class="line"></view> 
+ 
+ <!--密码-->
+  <view class="inputView"> 
+    <image class="keyImage" src="https://img-blog.csdnimg.cn/20190505172853378.png"></image> 
+    <label class="loginLab">密码</label> 
+    <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" /> 
+  </view> 
+ 
+ <!--按钮-->
+  <view class="loginBtnView"> 
+    <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录客户端</button> 
+  </view>
+  </view>  
+ </view> 
