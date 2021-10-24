@@ -1,0 +1,72 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/selectmode/selectmode",
+          "pathName": "pages/selectmode/selectmode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/localgame/localgame",
+          "pathName": "pages/localgame/localgame",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/onlinegame/onlinegame",
+          "pathName": "pages/onlinegame/onlinegame",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/win/win",
+          "pathName": "pages/win/win",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/load/load",
+          "pathName": "pages/load/load",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/chooseroom/chooseroom",
+          "pathName": "pages/chooseroom/chooseroom",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/aigame/aigame",
+          "pathName": "pages/aigame/aigame",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wait/wait",
+          "pathName": "pages/wait/wait",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
