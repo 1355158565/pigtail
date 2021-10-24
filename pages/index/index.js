@@ -7,10 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfoStr:'',
-  },
-  onShow:function(){
-    app.globalData
   },
 
   /**
@@ -37,8 +33,7 @@ Page({
         this.setData({
           userInfoStr: JSON.stringify(res),
         })
-        app.globalData.userInfo=res.userInfo
-        console.log(app.globalData.userInfo);
+        wx.setStorageSync('userInfo', res.userInfo)
         wx.navigateTo({
           url:'/pages/selectmode/selectmode'
         })
