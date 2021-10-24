@@ -9,7 +9,7 @@ Page({
 
   onLoad: function () {
     this.setData({
-      userInfo:app.globalData.userInfo
+      userInfo:wx.getStorageSync('userInfo')
     });
     bgm.src = "http://music.163.com/song/media/outer/url?id=1351618615.mp3"
     bgm.play()
@@ -26,7 +26,7 @@ Page({
 	},
 	onlinegame() {
 		wx.navigateTo({
-			url: '/pages/onlinegame/onlinegame',
+			url: '/pages/load/load',
 		})
   },
   showModal(){
