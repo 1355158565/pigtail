@@ -1,0 +1,12 @@
+<!--pages/chooseroom/chooseroom.wxml-->
+<view class="container">
+  <view class="choose">
+    <button class="cu-btn lg bg-yellow" bindtap="creategame">创建房间</button>
+    <button class="cu-btn lg bg-yellow" bindtap="joingame">加入房间</button>
+  </view>
+  <view class="join"> 
+    <label class="loginLab">uuid:</label> 
+    <input class="inputText" placeholder="请输入uuid" bindinput="uuidInput" /> 
+  </view> 
+  <view class="line"></view> 
+</view>
