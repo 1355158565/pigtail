@@ -1,3 +1,2 @@
 @import "main.wxss";
 @import "icon.wxss";
-@import "animation.wxss";
