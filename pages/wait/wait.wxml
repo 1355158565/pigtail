@@ -1,0 +1,7 @@
+<!--pages/wait/wait.wxml-->
+<view class="container">
+  <view class="wait">
+    <view class="">该房间的uuid:  {{uuid}}</view>
+  </view>
+  <image class="waitimg" src="https://img2020.cnblogs.com/blog/1925175/202110/1925175-20211023002627189-1086285544.png"></image>
+</view>
