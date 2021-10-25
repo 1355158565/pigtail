@@ -56,6 +56,7 @@ Page({
     id:null,
     robottap:0,
     musictap:1,
+    Isbegin:'oooo',
     value:{}
   },
 
@@ -261,11 +262,41 @@ Page({
       },
       success(res){
         if(res.data.code == 200){
-          if(res.data.data.your_turn != that.data.turn){
+          if(res.data.data.last_msg=='对局刚开始'&&res.data.data.last_msg!=that.data.Isbegin){
             console.log(res.data);
-            that.data.value = res.data
-            that.data.turn = res.data.data.your_turn
-            that.Move_card()
+            if(res.data.data.your_turn){
+              wx.showToast({
+                title: '由你先手！',
+                duration:1000
+              })
+              that.data.turn = res.data.data.your_turn
+              that.data.Isbegin = res.data.data.last_msg
+            }
+            else{
+              wx.showToast({
+                title: '对方先手！',
+                duration:1000
+              })
+              that.data.turn = res.data.data.your_turn
+              that.data.Isbegin = res.data.data.last_msg
+            }
+          }
+          else if(res.data.data.last_msg!='对局刚开始'){
+            if(res.data.data.your_turn != that.data.turn){
+              console.log(res.data);
+              if(res.data.data.last_code[0]==that.data.id&&res.data.data.   last_code[2]==1){
+                that.data.value = res.data
+                that.data.turn = res.data.data.your_turn
+              }
+              else{
+                that.data.value = res.data
+                that.data.turn = res.data.data.your_turn
+                that.Move_card()
+              }
+              if(that.data.turn==true&&that.data.robottap==1){
+                that.Robot()
+              }
+            }
           }
         }
         else{
@@ -334,6 +365,7 @@ Page({
               p1_club_top:this.Address_pile(this.data.p1_club_stacks[this.data.p1_club_stacks.length-1])
             })
           }
+          this.Judge(this.data.id,pile)
           ans = true
         }
       }
@@ -362,6 +394,7 @@ Page({
               p1_diamond_top:this.Address_pile(this.data.p1_diamond_stacks[this.data.p1_diamond_stacks.length-1])
             })
           }
+          this.Judge(this.data.id,pile)
           ans = true
         }
       }
@@ -390,6 +423,7 @@ Page({
               p1_spade_top:this.Address_pile(this.data.p1_spade_stacks[this.data.p1_spade_stacks.length-1])
             })
           }
+          this.Judge(this.data.id,pile)
           ans = true
         }
       }
@@ -418,6 +452,7 @@ Page({
               p1_heart_top:this.Address_pile(this.data.p1_heart_stacks[this.data.p1_heart_stacks.length-1])
             })
           }
+          this.Judge(this.data.id,pile)
           ans = true
         }
       }
@@ -500,7 +535,7 @@ Page({
           pile_top:'https://img2020.cnblogs.com/blog/1925175/202110/1925175-20211021105506598-2134088065.png'
         })
         this.Judge(opt[0],opt[2])
-      }, 1000);
+      }, 800);
     }
     else if(opt[1] == 1){
       if(opt[0]==this.data.id){
@@ -715,9 +750,7 @@ Page({
 
   Robot_turnon_card(){
     if(this.data.pile_total == 0){
-      wx.reLaunch({
-        url: '/pages/chooseroom/chooseroom',
-      })
+      this.Overgame()
     }
     let that = this
       wx.request({
