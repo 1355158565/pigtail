@@ -13,7 +13,7 @@ Page({
       url: 'http://172.17.173.97:9000/api/game',
       method:'post',
       data:{
-        "private": true
+        "private": false
       },
       header:{
         "Authorization": wx.getStorageSync('token')
