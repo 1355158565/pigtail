@@ -284,14 +284,14 @@ Page({
           else if(res.data.data.last_msg!='对局刚开始'){
             if(res.data.data.your_turn != that.data.turn){
               console.log(res.data);
-              if(res.data.data.last_code[0]==that.data.id&&res.data.data.   last_code[2]==1){
+              if(res.data.data.last_code[0]==that.data.id&&res.data.data.last_code[2]==1){
                 that.data.value = res.data
                 that.data.turn = res.data.data.your_turn
               }
               else{
                 that.data.value = res.data
                 that.data.turn = res.data.data.your_turn
-                that.Move_card()
+                that.Move_card(that.data.value)
               }
               if(that.data.turn==true&&that.data.robottap==1){
                 that.Robot()
@@ -362,7 +362,7 @@ Page({
           }
           else{
             this.setData({
-              p1_club_top:this.Address_pile(this.data.p1_club_stacks[this.data.p1_club_stacks.length-1])
+              p1_club_top:this.Address_pile(this.data.p1_club_stacks.slice(-1)[0])
             })
           }
           this.Judge(this.data.id,pile)
@@ -391,7 +391,7 @@ Page({
           }
           else{
             this.setData({
-              p1_diamond_top:this.Address_pile(this.data.p1_diamond_stacks[this.data.p1_diamond_stacks.length-1])
+              p1_diamond_top:this.Address_pile(this.data.p1_diamond_stacks.slice(-1)[0])
             })
           }
           this.Judge(this.data.id,pile)
@@ -420,7 +420,7 @@ Page({
           }
           else{
             this.setData({
-              p1_spade_top:this.Address_pile(this.data.p1_spade_stacks[this.data.p1_spade_stacks.length-1])
+              p1_spade_top:this.Address_pile(this.data.p1_spade_stacks.slice(-1)[0])
             })
           }
           this.Judge(this.data.id,pile)
@@ -449,7 +449,7 @@ Page({
           }
           else{
             this.setData({
-              p1_heart_top:this.Address_pile(this.data.p1_heart_stacks[this.data.p1_heart_stacks.length-1])
+              p1_heart_top:this.Address_pile(this.data.p1_heart_stacks.slice(-1)[0])
             })
           }
           this.Judge(this.data.id,pile)
@@ -523,8 +523,8 @@ Page({
     }
   },
 
-  Move_card(){
-    let opt = this.data.value.data.last_code.trim().split(/\s+/)
+  Move_card(e){
+    let opt = e.data.last_code.trim().split(/\s+/)
     if(opt[1] == 0){
       this.setData({
         pile_total:this.data.pile_total - 1,
@@ -535,13 +535,9 @@ Page({
           pile_top:'https://img2020.cnblogs.com/blog/1925175/202110/1925175-20211021105506598-2134088065.png'
         })
         this.Judge(opt[0],opt[2])
-      }, 800);
+      }, 200);
     }
-    else if(opt[1] == 1){
-      if(opt[0]==this.data.id){
-        this.Judge(opt[0],opt[2])
-      }
-      else{
+    else if(opt[1] == 1&&opt[0]!=this.data.id){
         let top = ''
         if(opt[2][0] == 'C'){
           this.data.p2_club_stacks.pop()
@@ -557,7 +553,7 @@ Page({
             p2_club_top:top
           })
         }
-        if(opt[2][0] == 'D'){
+        else if(opt[2][0] == 'D'){
           this.data.p2_diamond_stacks.pop()
           if(!this.data.p2_diamond_stacks.slice(-1)[0]){
             top = 'https://img2020.cnblogs.com/blog/1925175/202110/1925175-20211021225210340-773083698.jpg'
@@ -571,7 +567,7 @@ Page({
             p2_diamond_top:top
           })
         }
-        if(opt[2][0] == 'S'){
+        else if(opt[2][0] == 'S'){
           this.data.p2_spade_stacks.pop()
           if(!this.data.p2_spade_stacks.slice(-1)[0]){
             top = 'https://img2020.cnblogs.com/blog/1925175/202110/1925175-20211021225210340-773083698.jpg'
@@ -585,13 +581,13 @@ Page({
             p2_spade_top:top
           })
         }
-        if(opt[2][0] == 'H'){
+        else if(opt[2][0] == 'H'){
           this.data.p2_heart_stacks.pop()
           if(!this.data.p2_heart_stacks.slice(-1)[0]){
             top = 'https://img2020.cnblogs.com/blog/1925175/202110/1925175-20211021225210340-773083698.jpg'
           }
           else{
-            top = this.Address_pile(this.data.p2_club_stacks.slice(-1)[0])
+            top = this.Address_pile(this.data.p2_heart_stacks.slice(-1)[0])
           }
           this.setData({
             p2_heart:this.data.p2_heart - 1,
@@ -601,10 +597,6 @@ Page({
         }
         this.Judge(opt[0],opt[2])
       }
-    }
-    if(this.data.turn==true&&this.data.robottap==1){
-      this.Robot()
-    }
   },
 
   Judge(player,card){
@@ -722,9 +714,11 @@ Page({
         title: '平局！',
       })
     }
-    wx.reLaunch({
-      url: '/pages/chooseroom/chooseroom',
-    })
+    setTimeout(() => {
+      wx.reLaunch({
+        url: '/pages/chooseroom/chooseroom',
+      })
+    }, 2000);
   },
 
 
@@ -788,9 +782,10 @@ Page({
           }
           else{
             this.setData({
-              p1_club_top:this.Address_pile(this.data.p1_club_stacks[this.data.p1_club_stacks.length-1])
+              p1_club_top:this.Address_pile(this.data.p1_club_stacks.slice(-1)[0])
             })
           }
+          this.Judge(this.data.id,card)
     }
     else if(e == 'D'){
       card = this.data.p1_diamond_stacks.pop()
@@ -805,9 +800,10 @@ Page({
           }
           else{
             this.setData({
-              p1_diamond_top:this.Address_pile(this.data.p1_diamond_stacks[this.data.p1_diamond_stacks.length-1])
+              p1_diamond_top:this.Address_pile(this.data.p1_diamond_stacks.slice(-1)[0])
             })
           }
+          this.Judge(this.data.id,card)
     }
     else if(e == 'S'){
       card = this.data.p1_spade_stacks.pop()
@@ -822,9 +818,10 @@ Page({
       }
       else{
         this.setData({
-          p1_spade_top:this.Address_pile(this.data.p1_spade_stacks[this.data.p1_spade_stacks.length-1])
+          p1_spade_top:this.Address_pile(this.data.p1_spade_stacks.slice(-1)[0])
         })
       }
+      this.Judge(this.data.id,card)
     }
     else if(e == 'H'){
       card = this.data.p1_heart_stacks.pop()
@@ -839,9 +836,10 @@ Page({
       }
       else{
         this.setData({
-          p1_heart_top:this.Address_pile(this.data.p1_heart_stacks[this.data.p1_heart_stacks.length-1])
+          p1_heart_top:this.Address_pile(this.data.p1_heart_stacks.slice(-1)[0])
         })
       }
+      this.Judge(this.data.id,card)
     }
     let that = this
         wx.request({
