@@ -5,7 +5,10 @@
     "pages/localgame/localgame",
     "pages/aigame/aigame",
     "pages/onlinegame/onlinegame",
-    "pages/win/win"
+    "pages/win/win",
+    "pages/chooseroom/chooseroom",
+    "pages/load/load",
+    "pages/wait/wait",
   ],
   "window": {
     "pageOrientation": "landscape"
