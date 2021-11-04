@@ -65,12 +65,6 @@ Page({
     pile_flop:true,
   },
 
-  //调用全局变量
-  onLoad: function () {
-    this.setData({
-      userInfo:app.globalData.userInfo
-    });
-  },
   //每张牌牌对应相应的网络地址
   Address_pile(e){
     if(e == 'C1'){
@@ -234,7 +228,7 @@ Page({
   //初始化
   onLoad() {
     this.setData({
-      userInfo:app.globalData.userInfo,
+      userInfo:wx.getStorageSync('userInfo'),
     })
     let r1 =  Math.random() * 10
     let r2 = Math.random() * 10
@@ -273,12 +267,8 @@ Page({
 
   //翻牌操作
   Turnon_card(){
-    //说明上一次的翻牌操作还没完成
+    //上一次的翻牌操作还没完成
     if(this.data.pile_flop != true){
-      wx.showToast({
-        icon:'error',
-        title: '还没轮到你呢！',
-      })
       return
     }
     this.setData({
@@ -304,9 +294,6 @@ Page({
           flag:'p1'
         })
       }
-      this.setData({
-        pile_flop:true
-      })
       if(this.data.pile_total == 0){
         if(this.data.p1_total<this.data.p2_total){
           wx.showModal({
@@ -357,6 +344,9 @@ Page({
           })
         }
       }
+      this.setData({
+        pile_flop:true
+      })
     }, 1200);
   },
 
