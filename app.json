@@ -7,7 +7,7 @@
     "pages/onlinegame/onlinegame",
     "pages/chooseroom/chooseroom",
     "pages/load/load",
-    "pages/wait/wait",
+    "pages/wait/wait"
   ],
   "window": {
     "pageOrientation": "landscape"
